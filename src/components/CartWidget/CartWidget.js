@@ -2,9 +2,9 @@ import cart from "./assets/cart.png";
 
 const CartWidget = () => {
   return (
-    <a className="navbar-item">
+    <div className="navbar-item">
       <img src={cart} alt="cart" /> 1
-    </a>
+    </div>
   );
 };
 
