@@ -20,10 +20,6 @@ export const Checkout = () => {
   const { cart, total, deleteCart } = useContext(CartContext);
 
   const crearOrden = async ({ nombre, telefono, mail }) => {
-    console.log("nombre", nombre);
-    console.log("telefono", telefono);
-    console.log("mail", mail);
-
     setCargando(true);
     try {
       const orden = {
@@ -64,8 +60,8 @@ export const Checkout = () => {
         batch.commit();
         const orders = collection(db, "orders");
 
-        const ordenesGuardadas = addDoc(orders, orden);
-        console.log("ordenesGuardadas", ordenesGuardadas);
+        const ordenesGuardadas = await addDoc(orders, orden);
+
         setOrderId(ordenesGuardadas.id);
         setCargando(false);
         deleteCart();
@@ -82,7 +78,18 @@ export const Checkout = () => {
   }
 
   if (orderId) {
-    return <h1>Orden generada. Id: {orderId}</h1>;
+    return (
+      <div className="columns is-centered is-vcentered">
+        <div className="column is-half">
+          <h1 className="has-text-weight-bold is-size-5 has-text-centered">
+            Orden generada. Id: {orderId}
+          </h1>
+          <h4 className="has-text-weight-bold is-size-5 has-text-centered">
+            Gracias por su compra!
+          </h4>
+        </div>
+      </div>
+    );
   }
 
   return (

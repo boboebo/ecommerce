@@ -1,5 +1,7 @@
 # Ecommerce React - Artículos de Electrónica y Ropa
 
+![cart](./src/components/CartWidget/assets/cart.png)
+
 ## Descripción del Proyecto
 
 Este proyecto es un ecommerce desarrollado en React que ofrece una plataforma de compras para artículos de electrónica y ropa. Los usuarios pueden explorar productos, agregarlos al carrito y realizar compras.

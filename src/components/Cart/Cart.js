@@ -22,7 +22,9 @@ export const Cart = () => {
         <h1 className="media-content has-text-weight-bold is-size-5">
           Total: ${total}
         </h1>
-        <h6 className="has-text-success is-size-6">12 coutas de ${coutas} </h6>
+        <h6 className="has-text-success is-size-6">
+          12 coutas de ${coutas.toFixed(2)}{" "}
+        </h6>
       </div>
 
       {cart.map((item) => (

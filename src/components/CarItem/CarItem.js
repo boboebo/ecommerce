@@ -32,7 +32,7 @@ export const CartItem = ({ id, title, price, image, cant }) => {
           {/* Columna 3: Precio y Cantidad */}
           <div className="media-content ml-auto px-6">
             <p>
-              <strong>Precio:</strong> ${price.toFixed(2)}
+              <strong>Precio:</strong> ${price}
             </p>
             <p>
               <strong>Cantidad:</strong> {cant}
