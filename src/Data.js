@@ -1,3 +1,12 @@
+import {
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  getFirestore,
+} from "firebase/firestore";
+import { useState, useEffect } from "react";
+
 const products = [
   {
     id: 1,
@@ -90,12 +99,47 @@ export const getProducts = () => {
   });
 };
 
+export const GetProductsFromFb = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const productsCollection = collection(db, "productos");
+    getDocs(productsCollection).then((snapshot) => {
+      if (snapshot.size > 0) {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...collection.data() }))
+        );
+      }
+    });
+  }, []);
+};
+
 export const getProductById = (id) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products.find((prod) => prod.id === id));
     }, 200);
   });
+};
+
+export const GetProductByIdFromFb = (id) => {
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const item = doc(db, "productos", id);
+    getDoc(item).then((data) => {
+      if (data.exists()) {
+        setProduct({
+          id: data.id,
+          ...data.data(),
+        });
+      }
+    });
+  }, []);
 };
 
 export const getProductByCategory = (id) => {
