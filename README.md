@@ -14,8 +14,6 @@ Este proyecto es un ecommerce desarrollado en React que ofrece una plataforma de
 ## Tecnologías Utilizadas
 
 - **React:** La aplicación está desarrollada utilizando la biblioteca de JavaScript para construir interfaces de usuario.
-- **React Router:** Para la gestión de la navegación y las rutas dentro de la aplicación.
-- **Estado Global con Context API:** Para el manejo del estado global de la aplicación, como el carrito de compras.
 - **Estilos con CSS y/o Librerías de Componentes Estilizados:** Para la apariencia y diseño de la interfaz de usuario.
 - **Firebase o API externa:** Para la gestión de productos y datos relacionados.
 
@@ -26,13 +24,3 @@ Este proyecto es un ecommerce desarrollado en React que ofrece una plataforma de
 3. Instala las dependencias: `npm install`.
 4. Inicia la aplicación: `npm start`.
 5. Abre tu navegador y visita `http://localhost:3000`.
-
-## Contribuciones
-
-Si deseas contribuir al proyecto, por favor sigue estos pasos:
-
-1. Haz un fork del proyecto.
-2. Crea una nueva rama: `git checkout -b mi-nueva-funcionalidad`.
-3. Realiza tus cambios y haz commit: `git commit -m 'Añade mi nueva funcionalidad'`.
-4. Sube los cambios a tu fork: `git push origin mi-nueva-funcionalidad`.
-5. Envía un pull request.
